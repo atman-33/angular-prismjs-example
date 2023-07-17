@@ -4,17 +4,22 @@
 
 The steps are as follows:
 
-## Install module
+## 1. Install module
 
 ```bash
 npm install prismjs
 ```
 
-## Add services
+## 2. Add services
 
 src/services/
 
 - prism.service.ts
+- html-utils.ts
+- safe-html.pipe.ts
+- shared.module.ts
+
+### prism.service.ts
 
 ```ts
 import { isPlatformBrowser } from '@angular/common';
@@ -76,7 +81,7 @@ export class PrismService {
 }
 ```
 
-- html-utils.ts
+### html-utils.ts
 
 ```ts
 export function addClassToHtml(
@@ -94,7 +99,7 @@ export function addClassToHtml(
 }
 ```
 
-- safe-html.pipe.ts
+### safe-html.pipe.ts
 
 ```ts
 import { Pipe, PipeTransform } from '@angular/core';
@@ -115,7 +120,7 @@ export class SafeHtmlPipe implements PipeTransform {
 }
 ```
 
-- shared.module.ts
+### shared.module.ts
 
 ```ts
 import { NgModule } from '@angular/core';
@@ -128,11 +133,11 @@ import { SafeHtmlPipe } from './safe-html.pipe';
 export class SharedModule {}
 ```
 
-## Add prismjs style to global style sheet
+## 3. Add prismjs style to global style sheet
 
-global_styles.css
+### global_styles.css
 
-```scss
+```css
 /* Add application styles & imports to this file! */
 
 /* Prismjs theme */
@@ -151,9 +156,9 @@ global_styles.css
 */
 ```
 
-## Apply prismjs
+## 4. Apply prismjs to html
 
-main.ts
+### main.ts
 
 ```ts
 @Component({
@@ -187,7 +192,7 @@ export class App implements OnInit,AfterViewChecked {
 }
 ```
 
-main.html
+### main.html
 
 ```html
 <h1>Hello from {{name}}!</h1>
