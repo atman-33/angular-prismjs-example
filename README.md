@@ -2,6 +2,8 @@
 
 [Edit on StackBlitz ⚡️](https://stackblitz.com/edit/stackblitz-starters-rnpfug)
 
+![Sample image](img/sample.png)
+
 The steps are as follows:
 
 ## 1. Install module
